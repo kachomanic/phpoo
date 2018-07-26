@@ -94,7 +94,7 @@
 <?php 
 
 $mvc = new MvcController();
-$mvc->enlacesPaginasController();
+$mvc -> enlacesPaginasController();
 
 ?>
 
