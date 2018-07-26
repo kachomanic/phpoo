@@ -27,6 +27,17 @@ class Datos extends Conexion{
 	
   }
 
+  //Ingreso de usuario
+
+  public function ingresoUsuarioModel($datosModel, $tabla){
+	$stmt = Conexion::conectar()->prepare("SELECT usuario, password FROM $tabla WHERE usuario = :usuario");
+	$stmt->bindParam(":usuario", $datosModel["usuario"], PDO::PARAM_STR);
+	$stmt->execute();
+	return $stmt->fetch();
+
+
+
+  }
 
 }
 

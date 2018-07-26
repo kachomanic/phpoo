@@ -43,9 +43,9 @@ class MvcController{
  	//Registro de usuarios
 	public function registroUsuarioController(){
 
-	     if(isset($_POST["usuario"])){
+	     if(isset($_POST["usuarioRegistro"])){
 
-		   $datosController = array("usuario"=>$_POST["usuario"], "password"=>$_POST["password"], "email"=>$_POST["email"]);
+		   $datosController = array("usuario"=>$_POST["usuarioRegistro"], "password"=>$_POST["passwordRegistro"], "email"=>$_POST["emailRegistro"]);
 
 		   $respuesta = Datos::registroUsuarioModel($datosController, "usuarios");
 		   
@@ -59,6 +59,27 @@ class MvcController{
 
 	     }
 	}
+
+
+	//Ingreso de usuarios
+	public function ingresoUsuarioController(){
+		if(isset($_POST["usuarioIngreso"])){
+
+                   $datosController = array("usuario"=>$_POST["usuarioIngreso"], "password"=>$_POST["passwordIngreso"]);
+
+                   $respuesta = Datos::ingresoUsuarioModel($datosController, "usuarios");
+
+                   if($respuesta["usuario"] == $_POST["usuarioIngreso"] && $respuesta["password"] == $_POST["passwordIngreso"]){
+			header("location:index.php?action=usuarios");	
+		   }else{
+			header("location:index.php?action=fallo");
+			}
+
+
+             	}
+
+	}
+
 
 }
 
