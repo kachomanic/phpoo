@@ -33,9 +33,16 @@ class Datos extends Conexion{
 	$stmt = Conexion::conectar()->prepare("SELECT usuario, password FROM $tabla WHERE usuario = :usuario");
 	$stmt->bindParam(":usuario", $datosModel["usuario"], PDO::PARAM_STR);
 	$stmt->execute();
+	//fetch obtain one row
 	return $stmt->fetch();
 
+  }
 
+  public function vistaUsuariosModel($tabla){
+        $stmt = Conexion::conectar()->prepare("SELECT id, usuario, password, email FROM $tabla");
+        $stmt->execute();
+	//fetchAll obtain all rows
+        return $stmt->fetchAll();
 
   }
 
