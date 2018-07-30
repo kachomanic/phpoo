@@ -24,7 +24,7 @@ class Datos extends Conexion{
 	    return "error";
 
 	}
-	
+	$stmt->close();
   }
 
   //Ingreso de usuario
@@ -35,7 +35,7 @@ class Datos extends Conexion{
 	$stmt->execute();
 	//fetch obtain one row
 	return $stmt->fetch();
-
+	$stmt->close();
   }
 
   public function vistaUsuariosModel($tabla){
@@ -43,7 +43,7 @@ class Datos extends Conexion{
         $stmt->execute();
 	//fetchAll obtain all rows
         return $stmt->fetchAll();
-
+	$stmt->close();
   }
 
 }
