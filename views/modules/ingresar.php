@@ -1,4 +1,4 @@
-<h1>INGRESAR</h1>
+<h1>INGRESAR:</h1>
 
 	<form method="post" action="">
 		
