@@ -1,6 +1,6 @@
 <h1>INGRESAR:</h1>
 <!-- COMENTARIO NUEVA RAMA: -->
-<!-- THIS IS NEW -->
+<!-- THIS IS NEW ok-->
 	<form method="post" action="">
 		
 		<input type="text" placeholder="Usuario" name="usuarioIngreso" required>
